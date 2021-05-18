@@ -19,6 +19,7 @@ router.post('/update_product', productController.productUpdateInfo);
 /** Categories here */
 router.get('/all_categories', categoriesController.getAllCategories);
 router.get('/categories_bag', categoriesController.getAllCategoriesBag);
+router.get('/categories_shoes', categoriesController.getAllCategoriesShoes);
 
 /** Promotion here */
 router.get('/all_promotion', promotionController.getAllPromotion);

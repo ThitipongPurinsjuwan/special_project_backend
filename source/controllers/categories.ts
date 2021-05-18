@@ -17,4 +17,11 @@ const getAllCategoriesBag = (req: Request, res: Response, next: NextFunction) =>
     execute(req, res, query);
 };
 
-export default { getAllCategories, getAllCategoriesBag };
+const getAllCategoriesShoes = (req: Request, res: Response, next: NextFunction) => {
+    console.info(NAMESPACE, 'Getting all categories');
+
+    let query = `SELECT * FROM sbshop_categories WHERE categories_type=2`;
+    execute(req, res, query);
+};
+
+export default { getAllCategories, getAllCategoriesBag, getAllCategoriesShoes };
