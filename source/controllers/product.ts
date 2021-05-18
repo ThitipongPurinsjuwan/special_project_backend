@@ -13,7 +13,7 @@ const getAllProduct = (req: Request, res: Response, next: NextFunction) => {
 const getProductReview = (req: Request, res: Response, next: NextFunction) => {
     console.info(NAMESPACE, 'Getting review products');
     let { product_id } = req.query;
-    let query = `SELECT * FROM sbshop_product_review WHERE product_id = ${product_id}`;
+    let query = `SELECT * FROM sbshop_product_review join sbshop_user on sbshop_product_review.user_id = sbshop_user.user_id WHERE product_id = ${product_id}`;
     execute(req, res, query);
 };
 
