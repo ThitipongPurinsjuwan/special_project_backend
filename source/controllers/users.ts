@@ -9,6 +9,13 @@ const getAllUser = (req: Request, res: Response, next: NextFunction) => {
     execute(req, res, query);
 };
 
+const getUserPosition = (req: Request, res: Response, next: NextFunction) => {
+    console.info(NAMESPACE, 'Getting user & position');
+
+    let query = `SELECT * FROM sbshop_user join sbshop_user_status on sbshop_user.	user_status_id = sbshop_user_status.user_status_id`;
+    execute(req, res, query);
+};
+
 const getUserByUsernamePassword = (req: Request, res: Response, next: NextFunction) => {
     console.info(NAMESPACE, 'Getting username user');
     const { user_username, user_password } = req.body;
@@ -45,4 +52,4 @@ const userDelete = (req: Request, res: Response, next: NextFunction) => {
     execute(req, res, query);
 };
 
-export default { getAllUser, userUpdateInfo, userDelete, userInsert, getUserByUsernamePassword, getUserById };
+export default { getAllUser, userUpdateInfo, userDelete, userInsert, getUserByUsernamePassword, getUserById, getUserPosition };

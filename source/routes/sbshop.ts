@@ -34,6 +34,7 @@ router.get('/delete_order', ordersController.orderDelete);
 
 /** Users here */
 router.get('/all_users', usersController.getAllUser);
+router.get('/userposion', usersController.getUserPosition);
 router.get('/user', usersController.getUserById);
 router.get('/delete_user', usersController.userDelete);
 router.post('/update_user', usersController.userUpdateInfo);
