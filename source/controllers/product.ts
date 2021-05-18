@@ -16,6 +16,15 @@ const getProductReview = (req: Request, res: Response, next: NextFunction) => {
     let query = `SELECT * FROM sbshop_product_review WHERE product_id = ${product_id}`;
     execute(req, res, query);
 };
+
+const reviewInsert = (req: Request, res: Response, next: NextFunction) => {
+    console.info(NAMESPACE, 'Insert Review');
+    const { product_id, user_id, text_review } = req.body;
+    // console.log(req.body);
+    let query = `INSERT INTO sbshop_product_review (product_id, user_id, text_review) VALUES ('${product_id}', '${user_id}','${text_review}')`;
+    execute(req, res, query);
+};
+
 const getProductById = (req: Request, res: Response, next: NextFunction) => {
     console.info(NAMESPACE, 'Getting review products');
     let { product_id } = req.query;
@@ -50,4 +59,4 @@ const productUpdateInfo = (req: Request, res: Response, next: NextFunction) => {
     execute(req, res, query);
 };
 
-export default { getAllProduct, getProductReview, getProductWithType, productInsert, productDelete, getProductById, productUpdateInfo };
+export default { getAllProduct, getProductReview, getProductWithType, productInsert, productDelete, getProductById, productUpdateInfo, reviewInsert };

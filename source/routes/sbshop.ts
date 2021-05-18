@@ -11,6 +11,7 @@ const router = express.Router();
 /** Products here */
 router.get('/all_product', productController.getAllProduct);
 router.get('/product_review', productController.getProductReview);
+router.post('/insertreview', productController.reviewInsert);
 router.get('/product', productController.getProductWithType);
 router.get('/productById', productController.getProductById);
 router.post('/insert_product', productController.productInsert);
