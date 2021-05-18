@@ -32,8 +32,8 @@ const getUserById = (req: Request, res: Response, next: NextFunction) => {
 
 const userInsert = (req: Request, res: Response, next: NextFunction) => {
     console.info(NAMESPACE, 'Insert user');
-    const { user_firstname, user_lastname, user_address, user_phone_number, user_username, user_password, user_status_id } = req.body;
-    let query = `INSERT INTO sbshop_user (user_firstname, user_lastname, user_username, user_password, user_status_id, user_address,user_phone_number) VALUES ('${user_firstname}','${user_lastname}','${user_username}','${user_password}','${user_status_id}','${user_address}','${user_phone_number}')`;
+    const { user_firstname, user_lastname, user_address, user_phone_number, user_username, user_password, user_email, user_status_id } = req.body;
+    let query = `INSERT INTO sbshop_user (user_firstname, user_lastname, user_username, user_password, user_email, user_status_id, user_address,user_phone_number) VALUES ('${user_firstname}','${user_lastname}','${user_username}','${user_password}','${user_email}','${user_status_id}','${user_address}','${user_phone_number}')`;
     execute(req, res, query);
 };
 
