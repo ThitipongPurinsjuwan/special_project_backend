@@ -23,6 +23,9 @@ router.get('/categories_shoes', categoriesController.getAllCategoriesShoes);
 
 /** Promotion here */
 router.get('/all_promotion', promotionController.getAllPromotion);
+router.get('/delete_promotion', promotionController.promotionDelete);
+router.post('/insert_promotion', promotionController.promotionInsert);
+router.get('/getPromotionById', promotionController.getPromotionById);
 
 /** Orders here */
 router.get('/orders', ordersController.getAllOrder);
