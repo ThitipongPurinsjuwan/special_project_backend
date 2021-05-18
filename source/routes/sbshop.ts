@@ -4,6 +4,7 @@ import categoriesController from '../controllers/categories';
 import promotionController from '../controllers/promotion';
 import ordersController from '../controllers/orders';
 import usersController from '../controllers/users';
+import ShopeLikeController from '../controllers/shoplike';
 
 const router = express.Router();
 
@@ -43,5 +44,7 @@ router.get('/delete_user', usersController.userDelete);
 router.post('/update_user', usersController.userUpdateInfo);
 router.post('/insert_user', usersController.userInsert);
 router.post('/auth', usersController.getUserByUsernamePassword);
+router.post('/shop_like', ShopeLikeController.shoplikeInsert);
+router.get('/like_product', ShopeLikeController.getAllShopLike);
 
 export = router;
