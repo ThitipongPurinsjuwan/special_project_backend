@@ -52,7 +52,7 @@ const productDelete = (req: Request, res: Response, next: NextFunction) => {
     execute(req, res, query);
 };
 const productUpdateInfo = (req: Request, res: Response, next: NextFunction) => {
-    console.info(NAMESPACE, 'Update user');
+    console.info(NAMESPACE, 'Update promotion');
     const { product_id } = req.query;
     const { nameProduct, categoryProduct, promotionProduct, price, quantity, pathPicture } = req.body;
     let query = `UPDATE sbshop_product SET product_name = '${nameProduct}', product_price = '${price}', product_quantity = '${quantity}', product_category = '${categoryProduct}', product_img = '${pathPicture}', product_promotion = '${promotionProduct}' WHERE product_id = ${product_id}`;

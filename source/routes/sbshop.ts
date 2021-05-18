@@ -28,6 +28,7 @@ router.get('/all_promotion', promotionController.getAllPromotion);
 router.get('/delete_promotion', promotionController.promotionDelete);
 router.post('/insert_promotion', promotionController.promotionInsert);
 router.get('/getPromotionById', promotionController.getPromotionById);
+router.post('/update_promotion', promotionController.promotionUpdateInfo);
 
 /** Orders here */
 router.get('/orders', ordersController.getAllOrder);
