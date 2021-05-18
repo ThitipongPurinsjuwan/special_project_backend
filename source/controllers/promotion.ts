@@ -29,9 +29,9 @@ const getPromotionById = (req: Request, res: Response, next: NextFunction) => {
 };
 const promotionUpdateInfo = (req: Request, res: Response, next: NextFunction) => {
     console.info(NAMESPACE, 'Update user');
-    const { product_id } = req.query;
-    const { nameProduct, categoryProduct, promotionProduct, price, quantity, pathPicture } = req.body;
-    let query = `UPDATE sbshop_product SET product_name = '${nameProduct}', product_price = '${price}', product_quantity = '${quantity}', product_category = '${categoryProduct}', product_img = '${pathPicture}', product_promotion = '${promotionProduct}' WHERE product_id = ${product_id}`;
+    const { promotion_id } = req.query;
+    const { promotion_name, sales_percentage, promotion_date_start, promotion_date_end } = req.body;
+    let query = `UPDATE sbshop_promotion SET promotion_name = '${promotion_name}', sales_percentage = '${sales_percentage}', promotion_date_start = '${promotion_date_start}', promotion_date_end = '${promotion_date_end}' WHERE promotion_id = ${promotion_id}`;
     execute(req, res, query);
 };
 export default { getAllPromotion, promotionDelete, promotionInsert, getPromotionById, promotionUpdateInfo };
